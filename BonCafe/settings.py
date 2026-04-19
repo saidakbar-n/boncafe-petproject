@@ -21,12 +21,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(itv*6*$eer@r-^6&50fy7#9^)sy^)-n=2_))zi5*50i2yqbt('
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-(itv*6*$eer@r-^6&50fy7#9^)sy^)-n=2_))zi5*50i2yqbt(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '1') in ('1', 'true', 'True')
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS: set DJANGO_ALLOWED_HOSTS as comma separated list in Vercel.
+allowed = os.environ.get('DJANGO_ALLOWED_HOSTS', '')
+if allowed:
+    ALLOWED_HOSTS = [h.strip() for h in allowed.split(',') if h.strip()]
+else:
+    ALLOWED_HOSTS = []
+
+# If running in production (DEBUG False) ensure a real SECRET_KEY was provided.
+if not DEBUG and (not SECRET_KEY or SECRET_KEY.startswith('django-insecure-')):
+    raise RuntimeError('DJANGO_SECRET_KEY must be set in production environment')
 
 
 # Application definition
@@ -168,6 +177,21 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 # SITE URL - used for callback building
 SITE_URL = os.environ.get("SITE_URL", "http://localhost:8000")
+
+# When running behind a proxy (Vercel), detect secure requests
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# CSRF trusted origins: prefer explicit env var, otherwise derive from SITE_URL
+csrf_origins = os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS')
+if csrf_origins:
+    CSRF_TRUSTED_ORIGINS = [o.strip() for o in csrf_origins.split(',') if o.strip()]
+else:
+    # derive https origin from SITE_URL when possible
+    if SITE_URL.startswith('http'):
+        CSRF_TRUSTED_ORIGINS = [SITE_URL.rstrip('/')]
+    else:
+        CSRF_TRUSTED_ORIGINS = []
+
 
 # REST Framework
 REST_FRAMEWORK = {

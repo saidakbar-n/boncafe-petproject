@@ -1,0 +1,12 @@
+# Ignore local database and media to avoid uploading large files
+/db.sqlite3
+/media/
+/staticfiles/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node modules or other front-end build artifacts
+frontend/node_modules/
+frontend/dist/
