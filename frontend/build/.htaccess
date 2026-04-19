@@ -1,0 +1,13 @@
+# Prevent hot-update files from being proxied to Django
+<Files "*.hot-update.*">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Handle React Router
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

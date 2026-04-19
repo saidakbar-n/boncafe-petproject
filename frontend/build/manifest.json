@@ -1,0 +1,92 @@
+{
+  "short_name": "Bon Cafe",
+  "name": "Bon Cafe - Premium Coffee Experience",
+  "description": "Premium coffee experience with exceptional service and cozy atmosphere",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "default-avatar.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "default-avatar.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "theme_color": "#8B4513",
+  "background_color": "#FFF8F0",
+  "orientation": "portrait-primary",
+  "categories": ["food", "lifestyle", "business"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "shortcuts": [
+    {
+      "name": "Menu",
+      "short_name": "Menu",
+      "description": "Browse our coffee menu",
+      "url": "/menu",
+      "icons": [
+        {
+          "src": "default-avatar.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Branches",
+      "short_name": "Branches",
+      "description": "Find our locations",
+      "url": "/branches",
+      "icons": [
+        {
+          "src": "default-avatar.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with us",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "default-avatar.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "default-avatar.svg",
+      "type": "image/svg+xml",
+      "sizes": "1280x720",
+      "form_factor": "wide",
+      "label": "Bon Cafe Desktop Experience"
+    },
+    {
+      "src": "default-avatar.svg",
+      "type": "image/svg+xml",
+      "sizes": "750x1334",
+      "form_factor": "narrow",
+      "label": "Bon Cafe Mobile Experience"
+    }
+  ]
+}

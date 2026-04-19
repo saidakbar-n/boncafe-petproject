@@ -1,0 +1,6 @@
+# Redirect hot-update files to prevent Django proxy errors
+/*.hot-update.json /static/js/$1.hot-update.json 200
+/*.hot-update.js /static/js/$1.hot-update.js 200
+
+# Fallback for SPA routing
+/* /index.html 200

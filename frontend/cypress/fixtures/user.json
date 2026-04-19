@@ -1,0 +1,38 @@
+{
+  "id": "1",
+  "email": "test@example.com",
+  "name": "Test User",
+  "role": "customer",
+  "phone": "+998901234567",
+  "avatar": "https://example.com/avatar.jpg",
+  "loyaltyPoints": {
+    "current": 150,
+    "lifetime": 500,
+    "tier": "silver"
+  },
+  "addresses": [
+    {
+      "id": "1",
+      "label": "Home",
+      "address": "123 Main St, Tashkent, Uzbekistan",
+      "isDefault": true
+    },
+    {
+      "id": "2",
+      "label": "Work",
+      "address": "456 Business Ave, Tashkent, Uzbekistan",
+      "isDefault": false
+    }
+  ],
+  "preferences": {
+    "dietaryRestrictions": ["vegetarian"],
+    "favoriteCategories": ["coffee", "tea"],
+    "notifications": {
+      "email": true,
+      "sms": false,
+      "push": true
+    }
+  },
+  "createdAt": "2023-01-15T10:30:00Z",
+  "lastLogin": "2023-12-01T14:20:00Z"
+}

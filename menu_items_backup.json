@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Классический завтрак",
+    "ingredients": "Яйца, бекон, тосты, масло",
+    "protein": 25.0,
+    "carbs": 30.0,
+    "fats": 15.0,
+    "price": "45000.00",
+    "photo": "",
+    "type": "breakfast"
+  },
+  {
+    "id": 2,
+    "name": "Омлет с сыром",
+    "ingredients": "Яйца, сыр, молоко, зелень",
+    "protein": 20.0,
+    "carbs": 5.0,
+    "fats": 18.0,
+    "price": "35000.00",
+    "photo": "",
+    "type": "omelette"
+  },
+  {
+    "id": 5,
+    "name": "Цезарь с курицей",
+    "ingredients": "Салат, курица, сыр пармезан, соус цезарь",
+    "protein": 30.0,
+    "carbs": 15.0,
+    "fats": 20.0,
+    "price": "55000.00",
+    "photo": "",
+    "type": "salads"
+  },
+  {
+    "id": 4,
+    "name": "Борщ украинский",
+    "ingredients": "Свекла, капуста, морковь, мясо, сметана",
+    "protein": 15.0,
+    "carbs": 20.0,
+    "fats": 10.0,
+    "price": "40000.00",
+    "photo": "",
+    "type": "soups"
+  },
+  {
+    "id": 3,
+    "name": "Блины с медом",
+    "ingredients": "Мука, молоко, яйца, мед",
+    "protein": 8.0,
+    "carbs": 45.0,
+    "fats": 12.0,
+    "price": "25000.00",
+    "photo": "",
+    "type": "sweet_crepes"
+  }
+]

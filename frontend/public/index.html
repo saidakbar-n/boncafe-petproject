@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover" />
+    <meta name="theme-color" content="#8B4513" />
+    <meta name="description" content="Bon Cafe - Premium Coffee Experience with exceptional service and cozy atmosphere" />
+    <meta name="keywords" content="coffee, cafe, restaurant, uzbekistan, tashkent, premium coffee, food delivery" />
+    <meta name="author" content="Bon Cafe" />
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="%PUBLIC_URL%/default-avatar.svg" as="image">
+    <link rel="dns-prefetch" href="//api.example.com">
+    
+    <!-- Resource hints for better performance -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    <!-- PWA and mobile optimizations -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bon Cafe">
+    
+    <!-- iOS splash screens -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Microsoft tiles -->
+    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
+    
+    <!-- Prevent flash of unstyled content -->
+    <style>
+      body { visibility: hidden; opacity: 0; }
+      body.loaded { visibility: visible; opacity: 1; transition: opacity 0.3s; }
+      
+      /* Mobile overscroll fix */
+      @media (max-width: 767px) {
+        html, body {
+          background-color: #3E2723 !important; /* Footer color to prevent white flash */
+          overscroll-behavior-y: none;
+          -webkit-overscroll-behavior-y: none;
+          -webkit-tap-highlight-color: transparent;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          user-select: none;
+        }
+        
+        /* Prevent zoom on inputs */
+        input, textarea, select {
+          font-size: 16px !important;
+        }
+        
+        /* Optimize for 60fps */
+        * {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+      }
+      
+      /* Loading spinner */
+      .initial-loading {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #8B4513;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 9999;
+      }
+      
+      @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      
+      /* Hide loading spinner when app loads */
+      body.loaded .initial-loading {
+        display: none;
+      }
+    </style>
+    
+    <title>Bon Cafe - Premium Coffee Experience</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="initial-loading"></div>
+    <div id="root"></div>
+    
+    <script>
+      // Remove loading class when page is loaded
+      window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+      });
+      
+      // Prevent zoom on double tap for iOS
+      let lastTouchEnd = 0;
+      document.addEventListener('touchend', function (event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+    </script>
+  </body>
+</html>

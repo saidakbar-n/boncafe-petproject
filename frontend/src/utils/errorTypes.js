@@ -1,0 +1,46 @@
+// Simple error types without external dependencies
+export const ERROR_TYPES = {
+  NETWORK: 'NETWORK',
+  TIMEOUT: 'TIMEOUT',
+  SERVER: 'SERVER',
+  CLIENT: 'CLIENT',
+  VALIDATION: 'VALIDATION',
+  AUTHENTICATION: 'AUTHENTICATION',
+  AUTHORIZATION: 'AUTHORIZATION',
+  NOT_FOUND: 'NOT_FOUND',
+  RATE_LIMIT: 'RATE_LIMIT',
+  UNKNOWN: 'UNKNOWN'
+};
+
+export const classifyHttpError = (error) => {
+  if (!error.response) {
+    return ERROR_TYPES.NETWORK;
+  }
+  
+  const status = error.response.status;
+  
+  if (status >= 400 && status < 500) {
+    switch (status) {
+      case 401: return ERROR_TYPES.AUTHENTICATION;
+      case 403: return ERROR_TYPES.AUTHORIZATION;
+      case 404: return ERROR_TYPES.NOT_FOUND;
+      case 422: return ERROR_TYPES.VALIDATION;
+      case 429: return ERROR_TYPES.RATE_LIMIT;
+      default: return ERROR_TYPES.CLIENT;
+    }
+  }
+  
+  if (status >= 500) {
+    return ERROR_TYPES.SERVER;
+  }
+  
+  return ERROR_TYPES.UNKNOWN;
+};
+
+export const getErrorConfig = (errorType) => {
+  return {
+    type: errorType,
+    retryable: [ERROR_TYPES.NETWORK, ERROR_TYPES.TIMEOUT, ERROR_TYPES.SERVER].includes(errorType),
+    severity: errorType === ERROR_TYPES.SERVER ? 'high' : 'medium'
+  };
+};

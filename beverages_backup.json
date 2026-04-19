@@ -1,0 +1,50 @@
+[
+  {
+    "id": 2,
+    "name": "Капучино",
+    "description": "Кофе с молочной пенкой",
+    "price": "20000.00",
+    "photo": "beverage_photos/IMG_4157.JPG",
+    "type": "coffee"
+  },
+  {
+    "id": 3,
+    "name": "Латте",
+    "description": "Кофе с большим количеством молока",
+    "price": "22000.00",
+    "photo": "",
+    "type": "coffee"
+  },
+  {
+    "id": 1,
+    "name": "Эспрессо",
+    "description": "Классический итальянский кофе",
+    "price": "15000.00",
+    "photo": "",
+    "type": "coffee"
+  },
+  {
+    "id": 6,
+    "name": "Апельсиновый сок",
+    "description": "Свежевыжатый апельсиновый сок",
+    "price": "18000.00",
+    "photo": "",
+    "type": "fresh_juices"
+  },
+  {
+    "id": 4,
+    "name": "Фраппе",
+    "description": "Холодный кофе со льдом",
+    "price": "25000.00",
+    "photo": "",
+    "type": "iced_coffee"
+  },
+  {
+    "id": 5,
+    "name": "Зеленый чай",
+    "description": "Ароматный зеленый чай",
+    "price": "12000.00",
+    "photo": "",
+    "type": "tea"
+  }
+]

@@ -1,0 +1,23 @@
+<svg width="500" height="600" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B6F47;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A67C52;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="600" fill="url(#aboutGrad)"/>
+  
+  <!-- Coffee beans decoration -->
+  <ellipse cx="150" cy="150" rx="8" ry="12" fill="rgba(255,255,255,0.3)" transform="rotate(45 150 150)"/>
+  <ellipse cx="350" cy="150" rx="8" ry="12" fill="rgba(255,255,255,0.3)" transform="rotate(-45 350 150)"/>
+  <ellipse cx="150" cy="450" rx="8" ry="12" fill="rgba(255,255,255,0.3)" transform="rotate(-45 150 450)"/>
+  <ellipse cx="350" cy="450" rx="8" ry="12" fill="rgba(255,255,255,0.3)" transform="rotate(45 350 450)"/>
+  
+  <!-- Central content -->
+  <circle cx="250" cy="250" r="80" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="2"/>
+  <text x="250" y="260" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Our Story</text>
+  
+  <text x="250" y="350" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">Crafting exceptional</text>
+  <text x="250" y="370" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">coffee experiences</text>
+  <text x="250" y="390" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">since day one</text>
+</svg>
