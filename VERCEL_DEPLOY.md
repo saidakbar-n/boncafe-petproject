@@ -43,7 +43,17 @@ python manage.py runserver
 - `.vercelignore` - excludes local DB, media, and staticfiles.
 - `vercel.json` - routes requests to `api/asgi.py` and sets DJANGO_SETTINGS_MODULE.
 
+7) Unified Build Command for Vercel (recommended)
+
+Set the Vercel Build Command to run the included script which builds the frontend, installs Python deps, and runs collectstatic:
+
+- Build Command (set in Vercel):
+  ./vercel-build.sh
+
+Or inline equivalent:
+
+  npm --prefix frontend ci && npm --prefix frontend run build && python -m pip install --upgrade pip && python -m pip install -r api/requirements.txt && python manage.py collectstatic --noinput
+
 If you want, I can also:
 - Update settings to parse `DATABASE_URL` automatically (add `dj-database-url`),
 - Add a small `Procfile` or `manage_wrapper.sh` for alternative hosting.
-
