@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    # WhiteNoise allows serving static files directly from the Python app (useful on Vercel)
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -65,7 +67,8 @@ ROOT_URLCONF = 'BonCafe.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        # Use a string path for the templates dir to avoid static-analysis warnings
+        'DIRS': [str(BASE_DIR / 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -147,6 +150,13 @@ PARLER_LANGUAGES = {
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+# Directory where `collectstatic` will place static files for serving
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Use WhiteNoise storage backend to compress files and add headers
+# CompressedManifestStaticFilesStorage may raise errors if you don't run collectstatic
+# so we use CompressedStaticFilesStorage which is simpler and safer for builds.
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
