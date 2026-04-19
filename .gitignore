@@ -1,0 +1,97 @@
+# =========================
+# OS / System files
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =========================
+# Python / Django
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+
+# Media & static (optional: depends on your setup)
+media/
+staticfiles/
+
+# Migrations (optional: keep if needed in repo)
+# */migrations/*
+# !*/migrations/__init__.py
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Django settings local overrides
+local_settings.py
+
+# =========================
+# Node / JavaScript
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+build/
+dist/
+.next/
+out/
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.vite/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Testing
+# =========================
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Misc
+# =========================
+*.tgz
+*.gz
+*.zip
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
