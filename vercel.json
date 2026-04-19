@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "requirements.txt", "use": "@vercel/python" },
+    { "src": "api/asgi.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/asgi.py" }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "BonCafe.settings",
+    "PYTHONUNBUFFERED": "1"
+  }
+}
